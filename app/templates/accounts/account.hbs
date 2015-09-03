@@ -1,0 +1,57 @@
+<table class="table table-striped">
+  <thead>
+    <tr>
+        <th>Direction</th>
+        <th>Identity</th>
+        <th>DateTime</th>
+        <th>Message</th>
+        <th>Attended</th>
+        <th>Assigned Driver</th>
+    </tr>
+  </thead>
+    <tbody>
+      {{#each filteredAccount as |n|}}
+            <tr>
+            <td>{{n.typ}}</td>
+            <td>{{n.name}}</td>
+            <td>{{n.date}}</td>
+            <td>{{n.msg}}</td>
+            <td>{{n.isDone}}</td>
+            <td>{{n.driverphone}}</td>
+            
+            </tr>
+      {{/each}}
+    </tbody>
+</table>
+<p>
+<form class="form" role="form" {{action "replyMessage" on="submit"}}>
+  <div class="form-group">
+        <label for="Reply Message">Reply Message</label>
+        {{textarea class="form-control" rows="5" id="replyMsg" value=replyContent}}
+  </div>
+  <div class="form-group">
+        <label for="Drivers Phone">Driver's Phone Number</label>
+        {{input type="text" class="form-control" id="drivPhone" value=driverPhone}}
+  </div>
+    <button class="btn btn-default" type="submit">Submit</button>
+</form>
+</p>
+<p>
+<button type="button" class="btn btn-primary" {{action "markCompleted"}}>Mark As Attended</button>
+<button type="button" class="btn btn-success" {{action "markTaken"}}>Mark As Attending To</button>
+</p>
+<p>
+<form class="form-inline" role="form" {{action "billCustomer" on="submit"}}>
+  <div class="form-group">
+        <label for="Bill Customer">Bill Customer Phone:</label>
+        {{input type="text" class="form-control" id="billCus" value=billPhoneNumber}}
+  </div>
+  <div class="form-group">
+        <label for="Bill Customer">Bill Customer Amount:</label>
+        {{input type="text" class="form-control" id="billAmt" value=billAmount}}
+  </div>
+  <button type="submit" class="btn btn-default">Submit</button>
+</form>
+</p>
+
+

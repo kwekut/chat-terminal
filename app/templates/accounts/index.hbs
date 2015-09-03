@@ -1,0 +1,25 @@
+<table class="table table-striped">
+  <thead>
+    <tr>
+        <th>Direction</th>
+        <th>Identity</th>
+        <th>DateTime</th>
+        <th>Message</th>
+        <th>Attended</th>
+        <th>Assigned Driver</th>
+    </tr>
+  </thead>
+    <tbody>
+      {{#each model as |n|}}
+            <tr>
+            <td>{{n.typ}}</td>
+            <td>{{n.name}}</td>
+            <td>{{n.date}}</td>
+            <td>{{n.msg}}</td>
+            <td>{{n.isDone}}</td>
+            <td>{{n.driverphone}}</td>
+            
+            </tr>
+      {{/each}}
+    </tbody>
+</table>

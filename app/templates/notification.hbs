@@ -1,0 +1,22 @@
+<table class="table table-striped">
+  <thead>
+    <tr class="success">
+        <th>Alert</th>
+        <th>Related Party</th>
+        <th>DateTime</th>
+        <th>Details</th>
+    </tr>
+  </thead>
+    <tbody>
+      {{#each model as |n|}}
+            <tr class="info">
+            <td>{{n.typ}}</td>
+            <td>{{n.name}}</td>
+            <td>{{n.date}}</td>
+            <td>{{n.msg}}</td>
+            </tr>
+      {{else}}
+      "No notifications yet"
+      {{/each}}
+    </tbody>
+</table>

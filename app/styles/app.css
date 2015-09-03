@@ -1,0 +1,79 @@
+#mailbox-example main {
+  border: 1px solid #CCCCCC;
+  height: 500px;
+}
+#mailbox-example aside {
+  background-color: #F7F7F7;
+  border-right: 1px solid #CCCCCC;
+  height: 100%;
+  padding: 1em;
+}
+#mailbox-example aside h2 {
+  font-size: 1.1em;
+  font-weight: bold;
+  letter-spacing: 0.2em;
+  margin: 40px 0 0 0;
+  padding: 15px;
+  text-shadow: 1px 1px 0 #EEEEEE;
+  text-transform: uppercase;
+}
+#mailbox-example aside ul {
+  list-style: none outside none;
+  margin: 1em 1.5em;
+  padding: 0;
+}
+#mailbox-example aside ul > li {
+  padding-bottom: 10px;
+}
+#mailbox-example aside a {
+  color: #333333;
+  display: block;
+  padding: 15px;
+  text-decoration: none;
+}
+#mailbox-example aside .count {
+  color: #505F71;
+  float: right;
+  font-size: 1.1em;
+  font-weight: bold;
+  padding: 0.2em;
+  position: relative;
+  top: -3px;
+}
+#mailbox-example .index {
+  padding-top: 5em;
+  text-align: center;
+}
+#mailbox-example .index h2 {
+  font-size: 2em;
+  text-transform: uppercase;
+}
+#mailbox-example .main {
+  padding: 0;
+}
+#mailbox-example .main .table {
+  border-bottom: 1px solid #DDDDDD;
+}
+#mailbox-example .main .mail {
+  padding: 1em;
+}
+#mailbox-example .main .mail dl {
+  border-bottom: 1px solid #333333;
+  margin: 1em 0;
+  padding-bottom: 0.5em;
+  width: 100%;
+}
+#mailbox-example .main .mail h4 {
+  color: #E1563F;
+  font-size: 1.5em;
+  font-weight: bold;
+  letter-spacing: 1px;
+  line-height: 1.618em;
+  margin-bottom: 1;
+}
+#mailbox-example .main .mail p {
+  font-size: 1.2em;
+  line-height: 1.5em;
+  padding: 0 1em;
+  margin-bottom: 3em;
+}

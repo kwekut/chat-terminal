@@ -1,0 +1,23 @@
+<div id="mailbox-example" class="container">
+  <main class="row">
+
+<aside class="col-md-3">
+    <div class="list-group">
+      {{#each model as |m|}}
+         {{#link-to 'accounts.account' (query-params phonenumber=m.from)}}
+                    <span class="count">
+                        {{m.msg}} | {{m.isDone}}
+                    </span>
+                    {{m.from}} | {{m.name}}
+          {{/link-to}}
+      {{/each}}
+    </div>
+</aside>
+<div class="col-md-9">
+    <div class="list-group">
+      {{outlet}}
+    </div>
+</div>
+
+  </main>
+</div>

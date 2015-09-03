@@ -1,3 +1,35 @@
-<h2 id="title">Welcome to Ember</h2>
+<header><h1>GetDriver  </h1></header>
+ 
+<nav>
+<li>
+{{#link-to 'index'}}<button type="button" class="btn btn-primary">Home</button>{{/link-to}}
+{{#link-to 'accounts'}}<button type="button" class="btn btn-primary">Accounts</button>{{/link-to}}
+{{#link-to 'notification'}}<button type="button" class="btn btn-primary">Notifications</button>{{/link-to}}
+{{#link-to 'admin'}}<button type="button" class="btn btn-primary">Admin</button>{{/link-to}}
+{{#link-to 'twilio'}}<button type="button" class="btn btn-primary">Retrieved Messages</button>{{/link-to}}
+</li>
+</nav>
 
+<table class="table table-striped table-condensed">
+  <thead>
+    <tr class="active">
+        <th>Alert</th>
+        <th>Related Party</th>
+        <th>DateTime</th>
+        <th>Details</th>
+    </tr>
+  </thead>
+    <tbody>
+      {{#each model as |n|}}
+            <tr class="warning">
+            <td>{{n.typ}}</td>
+            <td>{{n.name}}</td>
+            <td>{{n.date}}</td>
+            <td>{{n.msg}}</td>
+            </tr>
+      {{else}}
+      <tr class="success"><td>"No Notifications Yet"</td></tr>
+      {{/each}}
+    </tbody>
+</table>
 {{outlet}}

@@ -1,0 +1,16 @@
+<p><h6>Get messages directly from twilio   </h6>
+
+<form class="form-inline" role="form" {{action "retrieve" on="submit"}}>
+  <div class="form-group">
+	    <label for="Get Messages">Get Messages</label>
+	 	{{input type="text"  class="form-control" id="msgNum" value=NumberOfMessages}}
+  </div>
+  <button type="submit" class="btn btn-default">Submit</button>
+</form>
+</p>
+<p><h6>Recall all current messsages  </h6>
+<button type="button" class="btn btn-success" {{action "recall"}}>Recall</button>
+</p>
+<p><h6>Delete all current messages  </h6>
+<button type="button" class="btn btn-primary" {{action "refresh"}}>Refresh(Don't Do It)!!!!</button>
+</p>

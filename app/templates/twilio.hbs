@@ -1,0 +1,23 @@
+<table class="table table-striped">
+  <thead>
+    <tr>
+        <th>Direction</th>
+        <th>Identity</th>
+        <th>DateTime</th>
+        <th>Message</th>
+    </tr>
+  </thead>
+    <tbody>
+      {{#each model as |n|}}
+            <tr>
+            <td>{{n.typ}}</td>
+            <td>{{n.name}}</td>
+            <td>{{n.date}}</td>
+            <td>{{n.msg}}</td>
+            </tr>
+      {{else}}
+
+      "No messages from twilio requested"
+      {{/each}}
+    </tbody>
+</table>
