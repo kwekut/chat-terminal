@@ -8,7 +8,7 @@ export default Ember.Route.extend({
   init: function() {
     this._super.apply(this, arguments);
 
-    //var socket =  this.get('socketService').socketFor('ws://3a5f5b95.ngrok.io/socket');
+    //var socket =  this.get('socketService').socketFor('ws://68e9d71e.ngrok.io/socket');
     var socket = this.get('socketService').socketFor('ws://blooming-sea-8888.herokuapp.com/socket');
     socket.on('open', this.myOpenHandler, this); 
     socket.on('message', this.myMessageHandler, this);
@@ -46,8 +46,12 @@ export default Ember.Route.extend({
   }, 
 
   model() {
-    return this.store.all('notification').slice(0, 5);
+    return this.store.all('notification');
   },
+
+
+
+
 
   actions: {
 

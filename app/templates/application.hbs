@@ -19,6 +19,10 @@
         <th>Details</th>
     </tr>
   </thead>
+</table>
+
+<div id="mailbox-limit" class="container">
+<table class="table table-striped table-condensed">
     <tbody>
       {{#each model as |n|}}
             <tr class="warning">
@@ -32,4 +36,5 @@
       {{/each}}
     </tbody>
 </table>
+</div>
 {{outlet}}

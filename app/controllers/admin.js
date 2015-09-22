@@ -23,7 +23,7 @@ export default Ember.ObjectController.extend({
                         'driverphone': 'driverphone',
                         'isDone': true });
 
-            //var socket =  this.get('socketService').socketFor('ws://3a5f5b95.ngrok.io/socket');
+            //var socket =  this.get('socketService').socketFor('ws://68e9d71e.ngrok.io/socket');
             var socket = this.get('socketService').socketFor('ws://blooming-sea-8888.herokuapp.com/socket');
             socket.send(obj);       
     },
@@ -40,26 +40,49 @@ export default Ember.ObjectController.extend({
                         'driverphone': 'driverphone',
                         'isDone': true });
 
-            //var socket =  this.get('socketService').socketFor('ws://3a5f5b95.ngrok.io/socket');
+            //var socket =  this.get('socketService').socketFor('ws://68e9d71e.ngrok.io/socket');
             var socket = this.get('socketService').socketFor('ws://blooming-sea-8888.herokuapp.com/socket');
             socket.send(obj);       
     },
 
     retrieve: function () {
-            var amt = this.get('NumberOfMessages');
+            var from = this.get('PhoneNumber');
+            var date = this.get('StartDate');
+            var msg = this.get('EndDate');
+            var driver = this.get('StartCount');
+            var name = this.get('MessageCount');
+            
+            var obj = JSON.stringify({
+                        'from': from, 
+                        'typ': 'RETRIEVE', 
+                        'date': date, 
+                        'msg': msg, 
+                        'name': name, 
+                        'driverphone': driver,
+                        'isDone': true });
+
+            //var socket =  this.get('socketService').socketFor('ws://68e9d71e.ngrok.io/socket');
+            var socket = this.get('socketService').socketFor('ws://blooming-sea-8888.herokuapp.com/socket');
+            socket.send(obj); 
+            this.set('PhoneNumber', '');       
+    },
+
+    refund: function () {
+            var msg = this.get('ChargeMsg');
             var name = 'GetDriver';
             var obj = JSON.stringify({
                         'from': 'from', 
-                        'typ': 'RETRIEVE', 
+                        'typ': 'REFUNDCUSTOMER', 
                         'date': 'date', 
-                        'msg': amt, 
+                        'msg': msg, 
                         'name': name, 
                         'driverphone': 'driverphone',
                         'isDone': true });
 
-            //var socket =  this.get('socketService').socketFor('ws://3a5f5b95.ngrok.io/socket');
+            //var socket =  this.get('socketService').socketFor('ws://68e9d71e.ngrok.io/socket');
             var socket = this.get('socketService').socketFor('ws://blooming-sea-8888.herokuapp.com/socket');
-            socket.send(obj);       
+            socket.send(obj); 
+            this.set('ChargeMsg', '');       
     }
 
   }

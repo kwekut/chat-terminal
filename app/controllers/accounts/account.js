@@ -39,7 +39,7 @@ export default Ember.ArrayController.extend({
                         'name': name, 
                         'driverphone': 'driverphone',
                         'isDone': true });
-            //var socket =  this.get('socketService').socketFor('ws://3a5f5b95.ngrok.io/socket');
+            //var socket =  this.get('socketService').socketFor('ws://68e9d71e.ngrok.io/socket');
             var socket =  this.get('socketService').socketFor('ws://blooming-sea-8888.herokuapp.com/socket');
             socket.send(obj);       
     },
@@ -57,7 +57,7 @@ export default Ember.ArrayController.extend({
                         'driverphone': 'driverphone',
                         'isDone': true });
 
-            //var socket =  this.get('socketService').socketFor('ws://3a5f5b95.ngrok.io/socket');
+            //var socket =  this.get('socketService').socketFor('ws://68e9d71e.ngrok.io/socket');
             var socket =  this.get('socketService').socketFor('ws://blooming-sea-8888.herokuapp.com/socket');
             socket.send(obj);       
     },
@@ -75,9 +75,10 @@ export default Ember.ArrayController.extend({
                         'driverphone': 'driverphone',
                         'isDone': true });
 
-            //var socket =  this.get('socketService').socketFor('ws://3a5f5b95.ngrok.io/socket');
+            //var socket =  this.get('socketService').socketFor('ws://68e9d71e.ngrok.io/socket');
             var socket =  this.get('socketService').socketFor('ws://blooming-sea-8888.herokuapp.com/socket');
-            socket.send(obj);       
+            socket.send(obj);
+            this.set('billAmount', '');       
     },
 
 
@@ -86,7 +87,7 @@ export default Ember.ArrayController.extend({
             var driverphone = this.get('driverPhone');
             var from = this.get('phonenumber');
             var name = 'GetDriver';
-            //var socket =  this.get('socketService').socketFor('ws://3a5f5b95.ngrok.io/socket');
+            //var socket =  this.get('socketService').socketFor('ws://68e9d71e.ngrok.io/socket');
             var socket =  this.get('socketService').socketFor('ws://blooming-sea-8888.herokuapp.com/socket');
 
         if ( driverphone == null ) {  
