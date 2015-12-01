@@ -6,7 +6,7 @@
       {{#each model as |m|}}
          {{#link-to 'accounts.account' (query-params phonenumber=m.from)}}
                     <span class="count">
-                        {{m.msg}} | {{m.isDone}}
+                        {{m.msg}} | {{m.driverphone}} | {{m.date}}
                     </span>
                     {{m.from}} | {{m.name}}
           {{/link-to}}

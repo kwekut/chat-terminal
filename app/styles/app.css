@@ -1,6 +1,6 @@
 #mailbox-example main {
   border: 1px solid #CCCCCC;
-  height: 500px;
+  height: 100%;
 }
 #mailbox-example aside {
   background-color: #F7F7F7;

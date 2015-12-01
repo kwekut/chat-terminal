@@ -30,6 +30,7 @@ export default Ember.ArrayController.extend({
 
     markTaken: function () {
             var from = this.get('phonenumber');
+            var driverphone = this.get('nameofattendant');
             var name = 'GetDriver';
             var obj = JSON.stringify({
                         'from': from, 
@@ -37,9 +38,9 @@ export default Ember.ArrayController.extend({
                         'date': 'date', 
                         'msg': 'msg', 
                         'name': name, 
-                        'driverphone': 'driverphone',
+                        'driverphone': driverphone,
                         'isDone': true });
-            //var socket =  this.get('socketService').socketFor('ws://68e9d71e.ngrok.io/socket');
+            //var socket =  this.get('socketService').socketFor('ws://c4370ec7.ngrok.io/socket');
             var socket =  this.get('socketService').socketFor('ws://blooming-sea-8888.herokuapp.com/socket');
             socket.send(obj);       
     },
@@ -57,25 +58,28 @@ export default Ember.ArrayController.extend({
                         'driverphone': 'driverphone',
                         'isDone': true });
 
-            //var socket =  this.get('socketService').socketFor('ws://68e9d71e.ngrok.io/socket');
+            //var socket =  this.get('socketService').socketFor('ws://c4370ec7.ngrok.io/socket');
             var socket =  this.get('socketService').socketFor('ws://blooming-sea-8888.herokuapp.com/socket');
             socket.send(obj);       
     },
 
+// Used date field for location. Date will be gotten from the server when object arrives there.
     billCustomer: function () {
             var amt = this.get('billAmount');
             var from = this.get('billPhoneNumber');
-            var name = 'GetDriver';
+            var name = this.get('attendantname');
+            var driver = this.get('driverphone');
+            var location = this.get('zipcode');
             var obj = JSON.stringify({
                         'from': from, 
                         'typ': 'BILLCUSTOMER', 
-                        'date': 'date', 
+                        'date': location, 
                         'msg': amt, 
                         'name': name, 
-                        'driverphone': 'driverphone',
+                        'driverphone': driver,
                         'isDone': true });
 
-            //var socket =  this.get('socketService').socketFor('ws://68e9d71e.ngrok.io/socket');
+            //var socket =  this.get('socketService').socketFor('ws://c4370ec7.ngrok.io/socket');
             var socket =  this.get('socketService').socketFor('ws://blooming-sea-8888.herokuapp.com/socket');
             socket.send(obj);
             this.set('billAmount', '');       
@@ -87,7 +91,7 @@ export default Ember.ArrayController.extend({
             var driverphone = this.get('driverPhone');
             var from = this.get('phonenumber');
             var name = 'GetDriver';
-            //var socket =  this.get('socketService').socketFor('ws://68e9d71e.ngrok.io/socket');
+            //var socket =  this.get('socketService').socketFor('ws://c4370ec7.ngrok.io/socket');
             var socket =  this.get('socketService').socketFor('ws://blooming-sea-8888.herokuapp.com/socket');
 
         if ( driverphone == null ) {  

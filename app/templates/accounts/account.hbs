@@ -36,12 +36,23 @@
     <button class="btn btn-default" type="submit">Submit</button>
 </form>
 </p>
+
 <p>
 <button type="button" class="btn btn-primary" {{action "markCompleted"}}>Mark As Attended</button>
-<button type="button" class="btn btn-success" {{action "markTaken"}}>Mark As Attending To</button>
 </p>
+
 <p>
-<form class="form-inline" role="form" {{action "billCustomer" on="submit"}}>
+<form class="form-inline" style="border:1px solid lightgray" role="form" {{action "markTaken" on="submit"}}>
+  <div class="form-group">
+        <label for="Attendant">Name of Attendant:</label>
+        {{input type="text" class="form-control" id="nameOfAttendant" value=nameofattendant}}
+  </div>
+  <button type="submit" class="btn btn-success">Attend To</button>
+</form>
+</p>
+
+<p>
+<form class="form-inline" style="border:1px solid red" role="form" {{action "billCustomer" on="submit"}}>
   <div class="form-group">
         <label for="Bill Customer">Bill Customer Phone:</label>
         {{input type="text" class="form-control" id="billCus" value=billPhoneNumber}}
@@ -50,8 +61,18 @@
         <label for="Bill Customer">Bill Customer Amount:</label>
         {{input type="text" class="form-control" id="billAmt" value=billAmount}}
   </div>
-  <button type="submit" class="btn btn-default">Submit</button>
+  <div class="form-group">
+        <label for="DriverId">Driver's Phone :</label>
+        {{input type="text" class="form-control" id="drivePhone" value=driverphone}}
+  </div>
+  <div class="form-group">
+        <label for="Location">Pick-up Location-> ZipCode:</label>
+        {{input type="text" class="form-control" id="locZip" value=zipcode}}
+  </div>
+  <div class="form-group">
+        <label for="Attendant">Attendant Name & Comments:</label>
+        {{input type="text" class="form-control" id="Attendantname" value=attendantname}}
+  </div>
+  <button type="submit" class="btn btn-default">Bill Customer</button>
 </form>
 </p>
-
-

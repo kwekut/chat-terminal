@@ -1,45 +1,50 @@
 <p><h4>Recall all current messsages  </h4>
 <button type="button" class="btn btn-success" {{action "recall"}}>Recall</button>
 </p>
-<p> _ </p>
+
 <p><h4>Get messages by customer phone   </h4></p>
 <p>
-<form class="form-inline" role="form" {{action "retrieve" on="submit"}}>
+<form class="form-inline" style="border:1px solid lightgray" role="form" {{action "retrieve" on="submit"}}>
   <div class="form-group">
-	    <label for="Phone Number">Phone Number</label>
-	 	{{input type="text"  class="form-control" id="PhoneNum" value=PhoneNumber placeholder="9995551234"}}
+      <label for="Phone Number">Phone Number</label>
+    {{input type="text"  class="form-control" id="PhoneNum" value=PhoneNumber placeholder="9995551234"}}
   </div>
   <div class="form-group">
          <label for="Start Date">Start Date:</label>
          {{input type="text"  class="form-control" id="SDate" value=StartDate placeholder="YYYY-MM-DD"}}
   </div>
   <div class="form-group">
-    	 <label for="End Date">End Date:</label>
-    	 {{input type="text"  class="form-control" id="EDate" value=EndDate placeholder="YYYY-MM-DD"}}
+       <label for="End Date">End Date:</label>
+       {{input type="text"  class="form-control" id="EDate" value=EndDate placeholder="YYYY-MM-DD"}}
   </div>
   <div class="form-group">
          <label for="Start Count">Start Count:</label>
          {{input type="text"  class="form-control" id="SCount" value=StartCount}}
   </div>
   <div class="form-group">
-    	 <label for="Msg Count">Message Count:</label>
-    	 {{input type="text"  class="form-control" id="MsgCount" value=MessageCount}}
+       <label for="Msg Count">Message Count:</label>
+       {{input type="text"  class="form-control" id="MsgCount" value=MessageCount}}
   </div>
   <button type="submit" class="btn btn-default">Submit</button>
 </form>
 </p>
-<p> _ </p>
+<p></p>
+
 <p><h4>Refund Stripe Charge  </h4></p>
 <p>
-<form class="form-inline" role="form" {{action "refund" on="submit"}}>
+<form class="form-inline" style="border:1px solid red" role="form" {{action "refund" on="submit"}}>
   <div class="form-group">
-	    <label for="RefundStripe">Refund Stripe</label>
-	 	{{input type="text"  class="form-control" id="ChargeMsg" value=ChargeMsg placeholder="Charge ID"}}
+      <label for="RefundStripe">Refund Stripe</label>
+    {{input type="text"  class="form-control" id="ChargeMsg" value=ChargeMsg placeholder="Charge ID"}}
+  </div>
+  <div class="form-group">
+      <label for="Phone Number">Customer's Phone Number</label>
+    {{input type="text"  class="form-control" id="PhoneNum" value=phonenumber placeholder="9995551234"}}
   </div>
   <button type="submit" class="btn btn-default">Submit</button>
 </form>
 </p>
-<p> _ </p>
+
 <p><h4>Delete all current messages  </h4>
 <button type="button" class="btn btn-primary" {{action "refresh"}}>Refresh(Don't Do It)!!!!</button>
 </p>
